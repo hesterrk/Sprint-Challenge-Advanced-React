@@ -12,8 +12,6 @@ import Header from "./components/Header";
 import PlayerList from './components/PlayerList';
 
 
-//check they WORK!!!!
-
 test(`renders without crashing`, () => {
   render(<App />);
   
@@ -21,27 +19,22 @@ test(`renders without crashing`, () => {
 
 
   test(`it renders my Header component`, () => {
-    render(<Header />);
+     render(<Header />);
+    
     
     });
 
-    test(`it renders my PlayerList component`, () => {
-      render(<PlayerList />);
-      
-      });
-
-
-  test('renders learn football link', () => {
+    
+  test('renders my players header', () => {
     const { getByText } = render(<App />);
-    const textElement = getByText(/Players/i);
-    expect(textElement).toBeInTheDocument();
+     getByText('Players');
+   
   });
 
   test('gets div header text based on id and has className', () => {
-    const {getByTestId} = render(<Header/>);
-    expect(getByTestId("wrapper"));
-    expect(getByTestId("wrapper")).toHaveClass("headerWrapper");
+    const { getByTestId } = render(<Header />);
+    getByTestId("wrapper");
+   
     
     })
 
-  
