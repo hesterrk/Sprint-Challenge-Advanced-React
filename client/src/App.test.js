@@ -9,7 +9,6 @@ import App from './App';
 
 import { render } from '@testing-library/react';
 import Header from "./components/Header";
-import PlayerList from './components/PlayerList';
 
 
 test(`renders without crashing`, () => {
@@ -38,3 +37,9 @@ test(`renders without crashing`, () => {
     
     })
 
+
+    test('renders my button text in header', () => {
+      const { getByText } = render(<Header />);
+       getByText('Browse in Dark Mode!');
+     
+    });
